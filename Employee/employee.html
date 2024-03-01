@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Employee</title>
+            <script src="../TypeScriptFiles/employee.js"></script>
+            <link rel="stylesheet" href="../Global/global.css">
+            <link rel="stylesheet" href="employee.css">
+            <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+            <!-- <script src="employee.js"></script> -->
+            
+            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+        <body>
+            <div class="main-container">
+                <div class="hamburger-menu">
+                    <div class="logo-header">
+                        <div class="tezo-circle hamburger-image">
+                            <a href="#"><img src="../Assets/logo-circle.PNG" class="logo-cirlce"></a>
+                        </div>
+                        <div class="hamburger-image">
+                            <a href="#"><img src="../Assets/handle.png" class="reverse-handle" onclick="hamburgerClose()"></a>
+                        </div>
+                    </div>
+                    <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/Dashboard.svg"></a></div>
+                    <div class="hamburger-image"><a href="employee.html"><img src="../Assets/Horizontal-nav/Employees.svg"></a></div>
+                    <div class="hamburger-image"><a href="../Roles/roles.html"><img src="../Assets/Horizontal-nav/Roles.svg"></a></div>
+                    <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/assign user.svg"></a></div>
+                </div>
+                <div class="left-container">
+                    <div>
+                        <div class="left-container-logo">
+                            <div>
+                                <a href="#"><img src="../Assets/TezoLogo.svg"></a>
+                            </div>
+                            <div class="left-container-arrow">
+                                <a href="#"><img src="../Assets/handle.png" onclick="hamburgerOpen()" ></a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="left-container-all">ALL</p>
+                        </div>
+                        <div class="left-container-dashboard">
+                            <a href="#">
+                                <div class="dashboard-div"><span>Dashboard</span></div>
+                            </a>
+                        </div>
+                        <div class="left-container-employee">
+                            <div class="employee-div">
+                                <a href="#"><div><span class="emp-text">Employee</span></div></a>
+                            </div>
+                            <div class="selected"></div>
+                        </div><br>
+                        
+                        <p class="role-user-management">ROLE / USER MANAGEMENT</p><br>
+                        <div class="left-container-roles">
+                            <a href="../Roles/roles.html">
+                                <div class="roles-div">Roles</div>
+                            </a>
+                        </div>
+                        <div class="left-container-access-rights">
+                            <a href="#">
+                                <div class="access-rights-div">Access Rights</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="left-container-update">
+                        <p class="update-heading">Install new update 2.3.1A</p>
+                        <p class="update-description">Allow to launch the new update for the AD application</p>
+                        <div class="btn-flex">
+                            <div>
+                                <button class="dismiss-btn">Dismiss</button>
+                            </div>
+                            <div>
+                                <button class="red-btn">Accept</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="delete-confirm">
+                    <p class="confirm-msg"></p>
+                    <div class="confirm-cancel-button">
+                        <button class="delete-confirm-btn" onclick="cancelConfirm()">Cancel</button>
+                        <button class="delete-confirm-btn" onclick="deleteConfirm()">Confirm</button>
+                    </div>
+                </div>
+                <div class="delete-success">
+                    <p class="success-text"></p>
+                </div>
+                <div class="body-right">
+                    <div class="main-right">
+                        <div class="right-header">
+                            <div class="search-bar">
+                                <input type="text" placeholder="Search" size="90" class="input-search">
+                            </div>
+                            <div class="logo-img">
+                                <div class="search-bar-images">
+                                    <a href="#"><img src="../Assets/language.png" class="search-img"></a>
+                                    <a href="#"><img src="../Assets/category.png" class="search-img"></a>
+                                    <a href="#"><img src="../Assets/night-mode.png" class="search-img"></a>
+                                    <a href="#"><img src="../Assets/notification.png" class="search-img"></a>
+                                    <a href="#"><img src="../Assets/user-1.jpg" class="person-icon"></a>
+                                    <img src="../Assets/green-dot.png" class="green-dot">
+                                </div>
+                                <div class="admin">
+                                    <div><a href="#"><p>Jhon Abraham<br><b>Admin</b></p></a></div>
+                                    <div class="down-arrow-icon"><a href="#"><i class="down-arrow fa">&#xf107;</i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-bodyDiv">
+                            <div class="employee-header">
+                                <div>
+                                    <h2 class="employee-heading">Employees</h2>
+                                    <p class="employee-heading-description">Find all of your company's employee accounts and their associated roles.</p>
+                                </div>
+                                <div class="employee-btn">
+                                    <button class="export-button" onclick="exportToExcel()">EXPORT</button>
+                                    <a href="../Add-Employee/Add-Employee.html"><button class="add-employeeButton"><i class="fa fa-plus plus-icon" >  </i> ADD EMPLOYEE</button></a>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <div class="btn">
+                                    <img src="../Assets/Interface/black-filter.svg" class="vector-image">
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha A" value="A" onclick="filterButton('A')">A</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha B" value="B" onclick="filterButton('B')">B</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha C" value="C" onclick="filterButton('C')">C</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha D" value="D" onclick="filterButton('D')">D</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha E" value="E" onclick="filterButton('E')">E</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha F" value="F" onclick="filterButton('F')">F</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha G" value="G" onclick="filterButton('G')">G</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha H" value="H" onclick="filterButton('H')">H</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha I" value="I" onclick="filterButton('I')">I</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha J" value="J" onclick="filterButton('J')">J</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha K" value="K" onclick="filterButton('K')">K</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha L" value="L" onclick="filterButton('L')">L</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha M" value="M" onclick="filterButton('M')">M</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha N" value="N" onclick="filterButton('N')">N</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha O" value="O" onclick="filterButton('O')">O</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha P" value="P" onclick="filterButton('P')">P</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha Q" value="Q" onclick="filterButton('Q')">Q</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha R" value="R" onclick="filterButton('R')">R</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha S" value="S" onclick="filterButton('S')">S</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha T" value="T" onclick="filterButton('T')">T</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha U" value="U" onclick="filterButton('U')">U</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha V" value="V" onclick="filterButton('V')">V</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha W" value="W" onclick="filterButton('W')">W</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha X" value="X" onclick="filterButton('X')">X</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha Y" value="Y" onclick="filterButton('Y')">Y</button>
+                                </div>
+                                <div class="btn">
+                                    <button class="btn-alpha Z" value="Z" onclick="filterButton('Z')">Z</button>
+                                </div>
+                            </div>
+                            <div class="filter-div">
+                                <div class="filter">
+                                    Filter
+                                    <img src="../Assets/filter.svg" class="filter-img">
+                                    <div class="dropdown" id="dropdown1">
+                                        <button class="dropbtn" onclick="dropdownStatus()">Status<span class="dropdown-count-status"></span>
+                                            <i class="fa fa-angle-down down-icon"></i>
+                                        </button>
+                                        <div class="dropdown-content-status">
+
+                                        </div>
+                                    </div> 
+                                    <div class="dropdown" id="dropdown2">
+                                        <button class="dropbtn" onclick="dropdownLocation()">Location<span class="dropdown-count-location"></span>
+                                            <i class="fa fa-angle-down down-icon"></i>
+                                        </button>
+                                        <div class="dropdown-content-loc">
+
+                                        </div>
+                                    </div>
+                                    <div class="dropdown" id="dropdown3">
+                                        <button class="dropbtn" onclick="dropdownDepartment()">Department<span class="dropdown-count-department"></span>
+                                            <i class="fa fa-angle-down down-icon"></i>
+                                        </button>
+                                        <div class="dropdown-content-dept">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-div">
+                                    <div class="filter-reset-apply">
+                                        <div>
+                                            <button  type="button" class="reset" onclick="resetDropdown()">Reset</button>
+                                        </div>
+                                        <div>
+                                            <input type="button" onclick="applyBtn()" class="apply" value="Apply" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="employee-names">
+                                <div class="row-1">
+                                    <div class="btn-delete">
+                                        <div>
+                                            <img src="../Assets/arrow-turn left -down.png" class="arrow-image">
+                                        </div>
+                                        <div class="delete-btn-div">
+                                            <button class="delete-btn" onclick="deleteRow()" disabled>Delete</button>
+                                        </div>
+                                        <div class="delete-msg">
+                                            <p>Selected Rows Deleted Successfully</p>
+                                        </div>
+                                    </div>
+                                    <div class="table-img-div">
+                                        <a href="#"><img src="../Assets/table-add.png" class="table-img"></a>
+                                    </div>
+                                </div>
+                                <hr class="horizontal-line">
+                                <div class="table-data">
+                                    <table class="user-data">
+                                        <thead>
+                                            <tr>
+                                            <th class="checkbox-header-cell"><input type="checkbox" class="parent-checkbox" onclick="checkAll()" onchange="ActivateDeleteButton()"></th>
+                                            <th class="table-user">
+                                                <div class="sorting-flex" onclick="sortTable('user-head')">
+                                                    <div class="user-heading">
+                                                        USER
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" onclick="sortTable('user-head')"></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th >
+                                                <div class="sorting-flex" onclick="sortTable('location')">
+                                                    <div>
+                                                        LOCATION
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" ></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="sorting-flex" onclick="sortTable('department')">
+                                                    <div>
+                                                        DEPARTMENT
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" ></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="sorting-flex" onclick="sortTable('role')">
+                                                    <div class="table-head-role">
+                                                        ROLE
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" ></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="sorting-flex" onclick="sortTable('empno')">
+                                                    <div>
+                                                        EMP NO
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" ></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="sorting-flex" onclick="sortTable('status')">
+                                                    <div class="status-div">
+                                                        STATUS
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" ></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="sorting-flex" onclick="sortTable('joindt')">
+                                                    <div>
+                                                        JOIN DT
+                                                    </div>
+                                                    <div>
+                                                        <a href="#"><img src="../Assets/anguar-icon.png" class="sorting-image" ></a>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="sorting-flex">
+                                                    <div class="more">
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-body">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+                        
+                       

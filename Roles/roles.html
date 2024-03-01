@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Roles</title>
+        <!-- <script src="roles.js"></script> -->
+        <script src="../TypeScriptFiles/Roles.js"></script>
+        <link rel="stylesheet" href="roles.css">
+        <link rel="stylesheet" href="../Global/global.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="hamburger-menu">
+                <div class="logo-header">
+                    <div class="tezo-circle">
+                        <a href="#"><img src="../Assets/logo-circle.PNG" class="logo-cirlce"></a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="../Assets/handle.png" onclick="hamburgerClose()" class="reverse-handle"></a>
+                    </div>
+                </div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/Dashboard.svg"></a></div>
+                <div class="hamburger-image"><a href="../Employee/employee.html"><img src="../Assets/Horizontal-nav/Employees-black.svg"></a></div>
+                <div class="hamburger-image"><a href="roles.html"><img src="../Assets/Horizontal-nav/roles-red.svg"></a></div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/assign user.svg"></a></div>
+            </div>
+            <div class="left-container">
+                <div>
+                    <div class="left-container-logo">
+                        <div>
+                            <a href="#"><img src="../Assets/TezoLogo.svg"></a>
+                        </div>
+                        <div class="left-container-arrow">
+                            <a href="#"><img src="../Assets/handle.png" onclick="hamburgerOpen()"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="left-container-all">ALL</p>
+                    </div>
+                    <div class="left-container-dashboard">
+                        <a href="#">
+                            <div class="dashboard-div"><span>Dashboard</span></div>
+                        </a>
+                    </div>
+                    <div class="left-container-employee">
+                        <a href="../Employee/employee.html">
+                            <div class="employee-div"><span class="employee-text">Employee</span></div>
+                        </a>
+                    </div><br>
+                    <p class="role-user-management">ROLE / USER MANAGEMENT</p><br>
+                    <div class="left-container-roles">
+                        <div class="roles-div">
+                            <a href="roles.html"><div><span class="role-text">Roles</span></div></a>
+                        </div>
+                        <div class="selected"></div>
+                    </div>
+                    <div class="left-container-access-rights">
+                        <a href="#">
+                            <div class="access-rights-div">Access Rights</div>
+                        </a>
+                    </div><br>
+                </div>
+                <div class="left-container-update">
+                    <p class="update-heading">Install new update 2.3.1A</p>
+                    <p class="update-description">Allow to launch the new update for the AD application</p>
+                    <div class="btn-flex">
+                        <div>
+                            <button class="dismiss-btn">Dismiss</button>
+                        </div>
+                        <div>
+                            <button class="red-btn">Accept</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-right">
+                <div class="main-right">
+                    <div class="right-header">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search" size="90" class="input-search">
+                        </div>
+                        <div class="logo-img">
+                            <div class="search-bar-images">
+                                <a href="#"><img src="../Assets/language.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/category.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/night-mode.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/notification.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/user-1.jpg" class="person-icon"></a>
+                                <img src="../Assets/green-dot.png" class="green-dot">
+                            </div>
+                            <div class="admin">
+                                <div><a href="#"><p>Jhon Abraham<br><b>Admin</b></p></a></div>
+                                <div class="down-arrow-icon"><a href="#"><i class="down-arrow fa">&#xf107;</i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-bodyDiv">
+                        <div class="employee-header">
+                            <div>
+                                <h2 class="roles-heading">Roles</h2>
+                                <p class="roles-heading-description">All the roles are configured here.</p>
+                            </div>
+                            <div class="employee-btn">
+                                <a href="../New Role/new role.html"><button class="add-employeeButton"><i class="fa fa-plus plus-icon" >  </i> ADD ROLE</button></a>
+                            </div>
+                        </div>
+                        <div class="filter-div">
+                            <div class="filter">
+                                <span>Filter</span>
+                                <img src="../Assets/filter.svg" class="filter-img">
+                                <div class="dropdown">
+                                    <button class="dropbtn">Location
+                                      <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                      <a href="#">Hyderabad</a>
+                                      <a href="#">Banglore</a>
+                                      <a href="#">Chennai</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Department
+                                      <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                      <a href="#">Product Engg.</a>
+                                      <a href="#">QA</a>
+                                    </div>
+                                </div>
+                                <div class="filter-reset-apply">
+                                    <div>
+                                        <button class="reset">Reset</button>
+                                    </div>
+                                    <div>
+                                        <button class="apply">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-body">
+                            <div class="right-div-roles">
+                                <div class="csm">
+                                    <div class="csm-heading">
+                                        <div><span class="role-heading">Customer Service Manager</span></div>
+                                        <div class="edit-image-div"><a href="#"><img src="../Assets/edit.svg"></a></div>
+                                    </div>
+                                    <div class="csm-dept">
+                                        <div>
+                                            <img src="../Assets/team.svg" class="team-image">
+                                            Department
+                                        </div>
+                                        <div>IT</div>
+                                    </div>
+                                    <div class="csm-loc">
+                                        <div>
+                                            <img src="../Assets/location.svg" class="team-image">
+                                            Location
+                                        </div>
+                                        <div>Hyderabad</div>
+                                    </div>
+                                    <div class="csm-emp-count">
+                                        <div>
+                                            Total Employees
+                                        </div>
+                                        <div>
+                                            <a href="#"><img src="../Assets/stacked-image.png" class="stacked-profiles"></a>
+                                        </div>
+                                    </div>
+                                    <div class="csm-all-employees">
+                                        <div>
+
+                                        </div>
+                                        <div>
+                                            <a href="../Roles-Details/roles-details.html">View all employees </a>
+                                            <img src="../Assets/Vector.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="usd">
+                                    <div class="usd-heading">
+                                        <div><span class="role-heading">Ux Designer</span></div>
+                                        <div class="edit-image-div"><a href="#"><img src="../Assets/edit.svg"></a></div>
+                                    </div>
+                                    <div class="usd-dept">
+                                        <div>
+                                            <img src="../Assets/team.svg" class="team-image">
+                                            Department
+                                        </div>
+                                        <div>Product Engg</div>
+                                    </div>
+                                    <div class="usd-loc">
+                                        <div>
+                                            <img src="../Assets/location.svg" class="team-image">
+                                            Location
+                                        </div>
+                                        <div>Hyderabad</div>
+                                    </div>
+                                    <div class="usd-emp-count">
+                                        <div>
+                                            Total Employees
+                                        </div>
+                                        <div>
+                                            <a href="#"><img src="../Assets/stacked-image.png" class="stacked-profiles"></a>
+                                        </div>
+                                    </div>
+                                    <div class="usd-all-employees">
+                                        <div>
+
+                                        </div>
+                                        <div>
+                                            <a href="../Roles-Details/roles-details.html">View all employees </a>
+                                            <img src="../Assets/Vector.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="abd">
+                                    <div class="abd-heading">
+                                        <div><span class="role-heading">Assistant Backend Developer</span></div>
+                                        <div class="edit-image-div"><a href="#"><img src="../Assets/edit.svg"></a></div>
+                                    </div>
+                                    <div class="abd-dept">
+                                        <div>
+                                            <img src="../Assets/team.svg" class="team-image">
+                                            Department
+                                        </div>
+                                        <div>UIUX</div>
+                                    </div>
+                                    <div class="abd-loc">
+                                        <div>
+                                            <img src="../Assets/location.svg" class="team-image">
+                                            Location
+                                        </div>
+                                        <div>Hyderabad</div>
+                                    </div>
+                                    <div class="abd-emp-count">
+                                        <div>
+                                            Total Employees
+                                        </div>
+                                        <div>
+                                            <a href="#"><img src="../Assets/stacked-image.png" class="stacked-profiles"></a>
+                                        </div>
+                                    </div>
+                                    <div class="abd-all-employees">
+                                        <div>
+
+                                        </div>
+                                        <div>
+                                            <a href="../Roles-Details/roles-details.html">View all employees </a>
+                                            <img src="../Assets/Vector.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hrm">
+                                    <div class="hrm-heading">
+                                        <div><span class="role-heading">Human Resource Manager</span></div>
+                                        <div class="edit-image-div"><a href="#"><img src="../Assets/edit.svg"></a></div>
+                                    </div>
+                                    <div class="hrm-dept">
+                                        <div>
+                                            <img src="../Assets/team.svg" class="team-image">
+                                            Department
+                                        </div>
+                                        <div>IT</div>
+                                    </div>
+                                    <div class="hrm-loc">
+                                        <div>
+                                            <img src="../Assets/location.svg" class="team-image">
+                                            Location
+                                        </div>
+                                        <div>Hyderabad</div>
+                                    </div>
+                                    <div class="hrm-emp-count">
+                                        <div>
+                                            Total Employees
+                                        </div>
+                                        <div>
+                                            <a href="#"><img src="../Assets/stacked-image.png" class="stacked-profiles"></a>
+                                        </div>
+                                    </div>
+                                    <div class="hrm-all-employees">
+                                        <div>
+
+                                        </div>
+                                        <div>
+                                            <a href="../Roles-Details/roles-details.html">View all employees </a>
+                                            <img src="../Assets/Vector.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fed">
+                                    <div class="fed-heading">
+                                        <div><span class="role-heading">Front End Developer</span></div>
+                                        <div class="edit-image-div"><a href="#"><img src="../Assets/edit.svg"></a></div>
+                                    </div>
+                                    <div class="fed-dept">
+                                        <div>
+                                            <img src="../Assets/team.svg" class="team-image">
+                                            Department
+                                        </div>
+                                        <div>Product Engg.</div>
+                                    </div>
+                                    <div class="fed-loc">
+                                        <div>
+                                            <img src="../Assets/location.svg" class="team-image">
+                                            Location
+                                        </div>
+                                        <div>Hyderabad</div>
+                                    </div>
+                                    <div class="fed-emp-count">
+                                        <div>
+                                            Total Employees
+                                        </div>
+                                        <div>
+                                            <a href="#"><img src="../Assets/stacked-image.png" class="stacked-profiles"></a>
+                                        </div>
+                                    </div>
+                                    <div class="fed-all-employees">
+                                        <div>
+
+                                        </div>
+                                        <div>
+                                            <a href="../Roles-Details/roles-details.html">View all employees </a>
+                                            <img src="../Assets/Vector.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sd">
+                                    <div class="sd-heading">
+                                        <div><span class="role-heading">Senior Developer</span></div>
+                                        <div class="edit-image-div"><a href="#"><img src="../Assets/edit.svg"></a></div>
+                                    </div>
+                                    <div class="sd-dept">
+                                        <div>
+                                            <img src="../Assets/team.svg" class="team-image">
+                                            Department
+                                        </div>
+                                        <div>UIUX</div>
+                                    </div>
+                                    <div class="sd-loc">
+                                        <div>
+                                            <img src="../Assets/location.svg" class="team-image">
+                                            Location
+                                        </div>
+                                        <div>Hyderabad</div>
+                                    </div>
+                                    <div class="sd-emp-count">
+                                        <div>
+                                            Total Employees
+                                        </div>
+                                        <div>
+                                            <a href="#"><img src="../Assets/stacked-image.png" class="stacked-profiles"></a>
+                                        </div>
+                                    </div>
+                                    <div class="sd-all-employees">
+                                        <div>
+
+                                        </div>
+                                        <div>
+                                            <a href="../Roles-Details/roles-details.html">View all employees </a>
+                                            <img src="../Assets/Vector.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

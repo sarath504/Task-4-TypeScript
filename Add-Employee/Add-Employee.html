@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Employee</title>
+        <link rel="stylesheet" href="../Global/global.css">
+        <link rel="stylesheet" href="Add-Employee.css">
+        <!-- <script src="Add-Employee.js"></script> -->
+        <script src="../TypeScriptFiles/Add-Employee.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="hamburger-menu">
+                <div class="logo-header">
+                    <div class="tezo-circle">
+                        <a href="#"><img src="../Assets/logo-circle.PNG" class="logo-cirlce"></a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="../Assets/handle.png" onclick="hamburgerClose()" class="reverse-handle"></a>
+                    </div>
+                </div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/Dashboard.svg"></a></div>
+                <div class="hamburger-image"><a href="../Employee/employee.html"><img src="../Assets/Horizontal-nav/Employees.svg"></a></div>
+                <div class="hamburger-image"><a href="../Roles/roles.html"><img src="../Assets/Horizontal-nav/Roles.svg"></a></div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/assign user.svg"></a></div>
+            </div>
+            <div class="left-container">
+                <div>
+                    <div class="left-container-logo">
+                        <div>
+                            <a href="#"><img src="../Assets/TezoLogo.svg"></a>
+                        </div>
+                        <div class="left-container-arrow">
+                            <a href="#"><img src="../Assets/handle.png" onclick="hamburgerOpen()"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="left-container-all">ALL</p>
+                    </div>
+                    <div class="left-container-dashboard">
+                        <a href="#">
+                            <div class="dashboard-div"><span>Dashboard</span></div>
+                        </a>
+                    </div>
+                    <div class="left-container-employee">
+                        <div class="employee-div">
+                            <a href="../Employee/employee.html"><div><span class="emp-text">Employee</span></div></a>
+                        </div>
+                        <div class="selected"></div>
+                    </div><br>
+                    
+                    <p class="role-user-management">ROLE / USER MANAGEMENT</p><br>
+                    <div class="left-container-roles">
+                        <a href="../Roles/roles.html">
+                            <div class="roles-div">Roles</div>
+                        </a>
+                    </div>
+                    <div class="left-container-access-rights">
+                        <a href="#">
+                            <div class="access-rights-div">Access Rights</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="left-container-update">
+                    <p class="update-heading">Install new update 2.3.1A</p>
+                    <p class="update-description">Allow to launch the new update for the AD application</p>
+                    <div class="btn-flex">
+                        <div>
+                            <button class="dismiss-btn">Dismiss</button>
+                        </div>
+                        <div>
+                            <button class="red-btn">Accept</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-right">
+                <div class="main-right">
+                    <div class="right-header">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search" size="90" class="input-search" required>
+                        </div>
+                        <div class="logo-img">
+                            <div class="search-bar-images">
+                                <a href="#"><img src="../Assets/language.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/category.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/night-mode.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/notification.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/user-1.jpg" class="person-icon"></a>
+                                <img src="../Assets/green-dot.png" class="green-dot">
+                            </div>
+                            <div class="admin">
+                                <div><a href="#"><p>Jhon Abraham<br><b>Admin</b></p></a></div>
+                                <div class="down-arrow-icon"><a href="#"><i class="down-arrow fa">&#xf107;</i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-emp-heading">Add Employee</div>
+                    <div class="add-employee">
+                        <div class="profile-picture-div">
+                            <div class="error-img-div">
+                                <div class="profile-div">
+                                    <img src="../Assets/profile.PNG" class="profile-picture">
+                                </div>
+                                <div class="error-btn-div">
+                                    <form>
+                                        <label for="upload-btn" class="label-upload">Upload Profile Picture</label>
+                                        <input type="file" id="upload-btn" class="file-upload">
+                                    </form>
+                                </div>
+                                <div class="success-msg">
+                                    Details added successfully
+                                </div>
+                            </div>
+                            <div class="edit-text">                   
+                                <label for="upload-btn" class="label-upload">Edit</label>
+                            </div>
+                        </div>
+                        <div  class="personal-info">
+                            <h4 class="personal-info-heading">Personal Information</h4>
+                            <div class="empno">
+                                <form class="empno-form">
+                                    <label for="empno" class="label">Emp No</label><br>
+                                    <input type="text" class="empno-data" id='empno' placeholder="Text" required onfocus="removeValidationMessage('empno')" onblur="InputBoxFocusOut('empno')" onkeyup="validateEmpId()">
+                                    <div class="error-msg-div">
+                                        <img src="../Assets/required.png" class="required required1">
+                                        <span class="error-msg div1">This field is required</span>
+                                    </div>
+                                    <div class="error-empid">
+                                        <span class="error-msg">Enter characters & digits only</span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="user-name">
+                                <div class="name-data">
+                                    <div class="name-div">
+                                        <label for="first-name" class="label">First Name</label><br>
+                                        <input type="text" class="first-name-data" id="first-name" placeholder="Text" required onfocus="removeValidationMessage('fname')" onblur="InputBoxFocusOut('fname')" onkeyup="validateFirstName()">
+                                        <div class="error-msg-div">
+                                            <img src="../Assets/required.png" class="required">
+                                            <span class="error-msg">This field is required</span>
+                                        </div>
+                                        <div class="error-fname">
+                                            <span class="error-msg">Enter characters only</span>
+                                        </div>
+                                    </div>
+                                    <div class="name-div">
+                                        <label for="last-name" class="label">Last Name</label><br>
+                                        <input type="text" class="last-name-data" id="last-name" placeholder="Text" required onfocus="removeValidationMessage('lname')" onblur="InputBoxFocusOut('lname')" onkeyup="validateLastName()">
+                                        <div class="error-msg-div">
+                                            <img src="../Assets/required.png" class="required">
+                                            <span class="error-msg">This field is required</span>
+                                        </div>
+                                        <div class="error-lname">
+                                            <span class="error-msg">Enter characters only</span>
+                                        </div>
+                                    </div>
+                                    <div class="name-div">
+                                        <label for="dob" class="label">Date of Birth</label><br>
+                                        <input type="text" onfocus="{this.type='date'}" class="dob-data" id="dob" placeholder="Select">
+                                    </div>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-details-div">
+                                        <label for="email" class="label">Email id</label><br>
+                                        <input type="email" class="email-data" id="email" placeholder="joe.j@technovert.com" required onfocus="removeValidationMessage('email')" onblur="InputBoxFocusOut('email')" onkeyup="validateEmail()">
+                                        <div class="error-msg-div">
+                                            <img src="../Assets/required.png" class="required">
+                                            <span class="error-msg">This field is required</span>
+                                        </div>
+                                        <div class="error-email">
+                                            <span class="error-msg">Enter valid email address</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-details-div">
+                                        <label for="mobile" class="label">Mobile Number</label><br>
+                                        <input type="text" class="mobile-data" id="mobile" placeholder="0000000000" onkeyup="validateMobileNumber()">
+                                        <div class="error-mobile">
+                                            <span class="error-msg">Enter 10 numbers from 0-9 only</span>
+                                        </div>
+                                    </div>               
+                                </div>
+                                <h4 class="employee-info-heading">Employment Information</h4>
+                                <div class="details-div">
+                                    <div class="emp-inf1">
+                                        <div class="joindt-div">
+                                            <label for="join-dt" class="label">Joining Date</label><br>
+                                            <input type="text" class="joindt-data" id="join-dt"  required onkeyup="validateJoinDate()" onfocus="{this.type='date'};removeValidationMessage('joindt')" onblur="InputBoxFocusOut('joindt')">
+                                            <div class="error-msg-div">
+                                                <img src="../Assets/required.png" class="required">
+                                                <span class="error-msg">This field is required</span>
+                                            </div>
+                                            <div class="error-date">
+                                                <span class="error-msg">Enter in MM/DD/YYYY format only</span>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-div">
+                                            <label for="" class="label">Location</label><br>
+                                            <div class="dropdown" id="dropdown1">
+                                                <button class="dropbtn btn-loc" onclick='dropDownOptionsDisplay("Location")'>Location
+                                                    <i class="fa fa-angle-down down-icon"></i>
+                                                </button>
+                                                <div class="dropdown-content">
+                                                  <span  onclick="dropDown(1,'Hyderabad')">Hyderabad</span>
+                                                  <span  onclick="dropDown(1,'Banglore')">Banglore</span>
+                                                  <span  onclick="dropDown(1,'Chennai')">Chennai</span>
+                                                  <span  onclick="dropDown(1,'Pune')">Pune</span>
+                                                  <span  onclick="dropDown(1,'Kolkata')">Kolkata</span>
+                                                  <span  onclick="dropDown(1,'Delhi')">Delhi</span>
+                                                  <span  onclick="dropDown(1,'Mumbai')">Mumbai</span>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="emp-inf2">
+                                        <div class=dropdown-div>
+                                            <label for="" class="label">Job Title</label><br>
+                                            <div class="dropdown" id="dropdown2">
+                                                <button class="dropbtn btn-role" onclick="dropDownOptionsDisplay('Job Title')">Job Title
+                                                    <i class="fa fa-angle-down down-icon"></i>
+                                                </button>
+                                                <div class="dropdown-content">
+                                                  <span onclick="dropDown(2,'UX Designer')">UX Designer</span>
+                                                  <span onclick="dropDown(2,'Full Stack Developer')">Full Stack Developer</span>
+                                                  <span onclick="dropDown(2,'Software Developer')">Software Developer</span>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="dropdown-div">
+                                            <label for="" class="label">Department</label><br>
+                                            <div class="dropdown" id="dropdown3">
+                                                <button class="dropbtn btn-dept" onclick="dropDownOptionsDisplay('Department')">Department
+                                                    <i class="fa fa-angle-down down-icon"></i>
+                                                </button>
+                                                <div class="dropdown-content">
+                                                  <span onclick="dropDown(3,'IT')">IT</span>
+                                                  <span onclick="dropDown(3,'Product Engg.')">Product Engg.</span>
+                                                  <span onclick="dropDown(3,'Software Developer')">Software Developer</span>
+                                                  <span onclick="dropDown(3,'QA')">QA</span>
+                                                  <span onclick="dropDown(3,'Finance')">Finance</span>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="emp-inf3">
+                                        <div class=dropdown-div>
+                                            <label for="" class="label" >Assign Manager</label><br>
+                                            <div class="dropdown" id="dropdown4">
+                                                <button class="dropbtn btn-manager" onclick="dropDownOptionsDisplay('manager')">Search
+                                                    <i class="fa fa-angle-down down-icon"></i>
+                                                </button>
+                                                <div class="dropdown-content">
+                                                  <span onclick="dropDown(4,'Manager A')">Manager A</span>
+                                                  <span onclick="dropDown(4,'Manager B')">Manager B</span>
+                                                  <span onclick="dropDown(4,'Manager C')">Manager C</span>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="dropdown-div">
+                                            <label for="" class="label">Assign Project</label><br>
+                                            <div class="dropdown" id="dropdown5">
+                                                <button class="dropbtn btn-project" onclick="dropDownOptionsDisplay('project')">Search
+                                                    <i class="fa fa-angle-down down-icon"></i>
+                                                </button>
+                                                <div class="dropdown-content">
+                                                  <span href="#" onclick="dropDown(5,'Project 1')">Project 1</span>
+                                                  <span href="#" onclick="dropDown(5,'Project 2')">Project 2</span>
+                                                  <span href="#" onclick="dropDown(5,'Project 3')">Project 3</span>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="btn-div">
+                                        <div>
+                                        </div>
+                                        <div class="add-cancel-btn">
+                                            <div >
+                                                <a href="../Employee/employee.html"><button class="cancel-btn">Cancel</button></a>
+                                            </div>
+                                            <div>
+                                                <button class="add-employee-btn" onclick="AddEmployee()">Add Employee</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

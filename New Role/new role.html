@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Role</title>
+        <link rel="stylesheet" href="new role.css">
+        <link rel="stylesheet" href="../Global/global.css">
+        <!-- <script src="new role.js"></script> -->
+        <script src="../TypeScriptFiles/new role.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="hamburger-menu">
+                <div class="logo-header">
+                    <div class="tezo-circle">
+                        <a href="#"><img src="../Assets/logo-circle.PNG" class="logo-cirlce"></a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="../Assets/handle.png" onclick="hamburgerClose()" class="reverse-handle"></a>
+                    </div>
+                </div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/Dashboard.svg"></a></div>
+                <div class="hamburger-image"><a href="../Employee/employee.html"><img src="../Assets/Horizontal-nav/Employees-black.svg"></a></div>
+                <div class="hamburger-image"><a href="../Roles/roles.html"><img src="../Assets/Horizontal-nav/roles-red.svg"></a></div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/assign user.svg"></a></div>
+            </div>
+            <div class="left-container">
+                <div>
+                    <div class="left-container-logo">
+                        <div>
+                            <a href="#"><img src="../Assets/TezoLogo.svg"></a>
+                        </div>
+                        <div class="left-container-arrow">
+                            <a href="#"><img src="../Assets/handle.png" onclick="hamburgerOpen()"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="left-container-all">ALL</p>
+                    </div>
+                    <div class="left-container-dashboard">
+                        <a href="#">
+                            <div class="dashboard-div"><span>Dashboard</span></div>
+                        </a>
+                    </div>
+                    <div class="left-container-employee">
+                        <a href="../Employee/employee.html">
+                            <div class="employee-div"><span class="employee-text">Employee</span></div>
+                        </a>
+                    </div><br>
+                    <p class="role-user-management">ROLE / USER MANAGEMENT</p><br>
+                    <div class="left-container-roles">
+                        <div class="roles-div">
+                            <a href="../Roles/roles.html"><div><span class="role-text">Roles</span></div></a>
+                        </div>
+                        <div class="selected"></div>
+                    </div>
+                    <div class="left-container-access-rights">
+                        <a href="#">
+                            <div class="access-rights-div">Access Rights</div>
+                        </a>
+                    </div><br>
+                </div>
+                <div class="left-container-update">
+                    <p class="update-heading">Install new update 2.3.1A</p>
+                    <p class="update-description">Allow to launch the new update for the AD application</p>
+                    <div class="btn-flex">
+                        <div>
+                            <button class="dismiss-btn">Dismiss</button>
+                        </div>
+                        <div>
+                            <button class="red-btn">Accept</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-right">
+                <div class="main-right">
+                    <div class="right-header">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search" size="90" class="input-search">
+                        </div>
+                        <div class="logo-img">
+                            <div class="search-bar-images">
+                                <a href="#"><img src="../Assets/language.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/category.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/night-mode.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/notification.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/user-1.jpg" class="person-icon"></a>
+                                <img src="../Assets/green-dot.png" class="green-dot">
+                            </div>
+                            <div class="admin">
+                                <div><a href="#"><p>Jhon Abraham<br><b>Admin</b></p></a></div>
+                                <div class="down-arrow-icon"><a href="#"><i class="down-arrow fa">&#xf107;</i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body-roles">
+                        <p class="create-role-heading">Create New Role</p>
+                        <div class="role-details">
+                            <div class="role-name-div">
+                                <label for="role" class="label">Role Name</label><br>
+                                <input type="text" class="role-name" id="role" placeholder="Role" onfocus="boxColor('role')" onblur="removeColor('role')">
+                            </div>
+                            <div class=dropdown-div>
+                                <label for="" class="label">Job Title</label><br>
+                                <div class="dropdown" id="dropdown1">
+                                    <button class="dropbtn">UX Designer
+                                        <i class="fa fa-angle-down down-icon"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                      <a href="#" onclick="dropDown(1,'UX Designer')">UX Designer</a>
+                                      <a href="#" onclick="dropDown(1,'Full Stack Developer')">Full Stack Developer</a>
+                                      <a href="#" onclick="dropDown(1,'Software Developer')">Software Developer</a>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div>
+                            <p class="description-heading">Description</p>
+                            <textarea class="description" rows="10" cols="66" placeholder="Text" onfocus="boxColor('textarea')" onblur="removeColor('textarea')"></textarea>
+                            <div class="dropdown-div-loc">
+                                <label for="" class="label">Location</label><br>
+                                <div class="dropdown" id="dropdown2">
+                                    <button class="dropbtn-location">Hyderabad
+                                        <i class="fa fa-angle-down down-icon"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                      <a href="#" onclick="dropdownLoc(2,'Hyderabad')">Hyderabad</a>
+                                      <a href="#" onclick="dropdownLoc(2,'Banglore')">Banglore</a>
+                                      <a href="#" onclick="dropdownLoc(2,'Chennai')">Chennai</a>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="emp-search-div">
+                            <label for="" class="label">Assign Employees</label><br>
+                            <input type="text" placeholder="Search for an employee" class="emp-search" onclick="empSearch()">
+                            <div class="assign-employees">
+                                <div class="user">
+                                    <div class="img-name">
+                                        <img src="../Assets/user-1.jpg" class="img-search">
+                                        <label for="user-1">Jennifer Dsousa</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="search-checkbox" id="user-1">
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="img-name">
+                                        <img src="../Assets/user-2.jpg" class="img-search">
+                                        <label for="user-2">Jennifer Dsousa</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="search-checkbox" id="user-2">
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="img-name">
+                                        <img src="../Assets/user-3.jpg" class="img-search">
+                                        <label for="user-3">Jennifer Dsousa</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="search-checkbox" id="user-3">
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="img-name">
+                                        <img src="../Assets/user-4.jpg" class="img-search">
+                                        <label for="user-4">Jennifer Dsousa</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="search-checkbox" id="user-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-cancel-btn">
+                            <div >
+                                <button class="cancel-btn">Cancel</button>
+                            </div>
+                            <div>
+                                <button class="add-employee-btn">Add Role</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Roles-Details</title>
+        <!-- <script src="roles-details.js"></script> -->
+        <script src="../TypeScriptFiles/roles-details.js"></script>
+        <link rel="stylesheet" href="roles-details.css">
+        <link rel="stylesheet" href="../Global/global.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="hamburger-menu">
+                <div class="logo-header">
+                    <div class="tezo-circle">
+                        <a href="#"><img src="../Assets/logo-circle.PNG" class="logo-cirlce"></a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="../Assets/handle.png" onclick="hamburgerClose()" class="reverse-handle"></a>
+                    </div>
+                </div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/Dashboard.svg"></a></div>
+                <div class="hamburger-image"><a href="../Employee/employee.html"><img src="../Assets/Horizontal-nav/Employees-black.svg"></a></div>
+                <div class="hamburger-image"><a href="../Roles/roles.html"><img src="../Assets/Horizontal-nav/roles-red.svg"></a></div>
+                <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/assign user.svg"></a></div>
+            </div>
+            <div class="left-container">
+                <div>
+                    <div class="left-container-logo">
+                        <div>
+                            <a href="#"><img src="../Assets/TezoLogo.svg"></a>
+                        </div>
+                        <div class="left-container-arrow">
+                            <a href="#"><img src="../Assets/handle.png" onclick="hamburgerOpen()"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="left-container-all">ALL</p>
+                    </div>
+                    <div class="left-container-dashboard">
+                        <a href="#">
+                            <div class="dashboard-div"><span>Dashboard</span></div>
+                        </a>
+                    </div>
+                    <div class="left-container-employee">
+                        <a href="../Employee/employee.html">
+                            <div class="employee-div"><span>Employee</span></div>
+                        </a>
+                    </div><br>
+                    <p class="role-user-management">ROLE / USER MANAGEMENT</p><br>
+
+                    <div class="left-container-roles">
+                        <div class="roles-div">
+                            <a href="../Roles/roles.html"><div><span class="role-text">Roles</span></div></a>
+                        </div>
+                        <div class="selected"></div>
+                    </div>
+                    <div class="left-container-access-rights">
+                       <a href="#">
+                            <div class="access-rights-div">Access Rights</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="left-container-update">
+                    <p class="update-heading">Install new update 2.3.1A</p>
+                    <p class="update-description">Allow to launch the new update for the AD application</p>
+                    <div class="btn-flex">
+                        <div>
+                            <button class="dismiss-btn">Dismiss</button>
+                        </div>
+                        <div>
+                            <button class="red-btn">Accept</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body-right">
+                <div class="main-right">
+                    <div class="right-header">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search" size="90" class="input-search">
+                        </div>
+                        <div class="logo-img">
+                            <div class="search-bar-images">
+                                <a href="#"><img src="../Assets/language.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/category.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/night-mode.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/notification.png" class="search-img"></a>
+                                <a href="#"><img src="../Assets/user-1.jpg" class="person-icon"></a>
+                                <img src="../Assets/green-dot.png" class="green-dot">
+                            </div>
+                            <div class="admin">
+                                <div><a href="#"><p>Jhon Abraham<br><b>Admin</b></p></a></div>
+                                <div class="down-arrow-icon"><a href="#"><i class="down-arrow fa">&#xf107;</i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-bodyDiv">
+                        <div class="roles-header">
+                            <div>
+                                <h2 class="roles-heading"><a href="../Roles/roles.html">Roles</a><i class="fa fa-angle-right right-angular"></i><a href="employee.html">Employees</a></h2>
+                                <span class="roles-heading-description">All the roles are configured here.</span>
+                            </div>
+                            <div class="employee-btn">
+                                <button class="add-employeeButton"><i class="fa fa-plus plus-icon" >  </i> ADD EMPLOYEE</button>
+                            </div>
+                        </div>
+                        <div class="role-description-heading">
+                            <h3>Role Description</h3>
+                            <p class="role-description-content">
+                                Configure the providers that are available to users when they sign in.Configure the providers that are available to users when they sign in.Configure the providers that are available to users when they sign in.Configure the providers that are available to users when they sign in.
+                            </p>
+                        </div><br>
+                        <div class="right-body">
+                            <div class="right-div-roles">
+                                <div class="emp-1">
+                                    <div class="emp-designation">
+                                        <div>
+                                            <a href="#"><img src="../Assets/user-1.jpg" class="employee-image"></a>
+                                        </div>
+                                        <div class="emp-name">
+                                            <p>Robert Fox<br><span class="designation">Head of Product Design</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="emp-details">
+                                        <div class="emp-id">
+                                            <a href="#"><img src="../Assets/Vector (1).svg"></a>
+                                            <span class="emp-details-content">INF22</span><br>
+                                        </div>
+                                        <div class="emp-email">
+                                            <a href="#"><img src="../Assets/email.svg"></a>
+                                            <span class="emp-details-content">adamk@yahoo.com</span>
+                                        </div>
+                                        <div class="emp-domain">
+                                            <a href="#"><img src="../Assets/team.svg"></a>
+                                            <span class="emp-details-content">Technology</span><br>
+                                        </div>
+                                        <div class="emp-location">
+                                            <a href="#"><img src="../Assets/location.svg"></a>
+                                            <span class="emp-details-content">Stockton, New Hampshire</span><br>
+                                        </div>
+                                        <div class="view-employee">
+                                            <div></div>
+                                            <div class="view-link">
+                                                <p>
+                                                    <a href="#">View
+                                                    <img src="../Assets/Vector.svg"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="emp-2">
+                                    <div class="emp-designation">
+                                        <div>
+                                            <a href="#"><img src="../Assets/user-2.jpg" class="employee-image"></a>
+                                        </div>
+                                        <div class="emp-name">
+                                            <p>Marvin McKinney<br><span class="designation">Head of Engineering</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="emp-details">
+                                        <div class="emp-id">
+                                            <a href="#"><img src="../Assets/Vector (1).svg"></a>
+                                            <span class="emp-details-content">INF150</span><br>
+                                        </div>
+                                        <div class="emp-email">
+                                            <a href="#"><img src="../Assets/email.svg"></a>
+                                            <span class="emp-details-content">sravani@yahoo.com</span>
+                                        </div>
+                                        <div class="emp-domain">
+                                            <a href="#"><img src="../Assets/team.svg"></a>
+                                            <span class="emp-details-content">Admin</span><br>
+                                        </div>
+                                        <div class="emp-location">
+                                            <a href="#"><img src="../Assets/location.svg"></a>
+                                            <span class="emp-details-content">Syracuse, Connecticut</span><br>
+                                        </div>
+                                        <div class="view-employee">
+                                            <div></div>
+                                            <div class="view-link">
+                                                <p>
+                                                    <a href="#">View
+                                                    <img src="../Assets/Vector.svg"></a>
+                                                </p>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="emp-3">
+                                    <div class="emp-designation">
+                                        <div>
+                                            <a href="#"><img src="../Assets/user-3.jpg" class="employee-image"></a>
+                                        </div>
+                                        <div class="emp-name">
+                                            <p>Eleanor Pena<br><span class="designation">Senior Interaction Designer</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="emp-details">
+                                        <div class="emp-id">
+                                            <a href="#"><img src="../Assets/Vector (1).svg"></a>
+                                            <span class="emp-details-content">INF240</span><br>
+                                        </div>
+                                        <div class="emp-email">
+                                            <a href="#"><img src="../Assets/email.svg"></a>
+                                            <span class="emp-details-content">grolschie@yahoo.com</span>
+                                        </div>
+                                        <div class="emp-domain">
+                                            <a href="#"><img src="../Assets/team.svg"></a>
+                                            <span class="emp-details-content">Customer Executive</span><br>
+                                        </div>
+                                        <div class="emp-location">
+                                            <a href="#"><img src="../Assets/location.svg"></a>
+                                            <span class="emp-details-content">Portland, lllinois</span><br>
+                                        </div>
+                                        <div class="view-employee">
+                                            <div></div>
+                                            <div class="view-link">
+                                                <p>
+                                                    <a href="#">View
+                                                    <img src="../Assets/Vector.svg"></a>
+                                                </p>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="emp-4">
+                                    <div class="emp-designation">
+                                        <div>
+                                            <a href="#"><img src="../Assets/user-4.jpg" class="employee-image"></a>
+                                        </div>
+                                        <div class="emp-name">
+                                            <p>Jane Cooper<br><span class="designation">Product Analyst</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="emp-details">
+                                        <div class="emp-id">
+                                            <a href="#"><img src="../Assets/Vector (1).svg"></a>
+                                            <span class="emp-details-content">INF389</span><br>
+                                        </div>
+                                        <div class="emp-email">
+                                            <a href="#"><img src="../Assets/email.svg"></a>
+                                            <span class="emp-details-content">chronos@yahoo.com</span>
+                                        </div>
+                                        <div class="emp-domain">
+                                            <a href="#"><img src="../Assets/team.svg"></a>
+                                            <span class="emp-details-content">Product</span><br>
+                                        </div>
+                                        <div class="emp-location">
+                                            <a href="#"><img src="../Assets/location.svg"></a>
+                                            <span class="emp-details-content">Coppell, Virginia</span><br>
+                                        </div>
+                                        <div class="view-employee">
+                                            <div></div>
+                                            <div class="view-link">
+                                                <p>
+                                                    <a href="#">View
+                                                    <img src="../Assets/Vector.svg"></a>
+                                                </p>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="emp-5">
+                                    <div class="emp-designation">
+                                        <div>
+                                            <a href="#"><img src="../Assets/user-1.jpg" class="employee-image"></a>
+                                        </div>
+                                        <div class="emp-name">
+                                            <p>Floyd Miles<br><span class="designation">Visual Designer</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="emp-details">
+                                        <div class="emp-id">
+                                            <a href="#"><img src="../Assets/Vector (1).svg"></a>
+                                            <span class="emp-details-content">INF209</span><br>
+                                        </div>
+                                        <div class="emp-email">
+                                            <a href="#"><img src="../Assets/email.svg"></a>
+                                            <span class="emp-details-content">dgatwood@yahoo.com</span>
+                                        </div>
+                                        <div class="emp-domain">
+                                            <a href="#"><img src="../Assets/team.svg"></a>
+                                            <span class="emp-details-content">Customer Executive</span><br>
+                                        </div>
+                                        <div class="emp-location">
+                                            <a href="#"><img src="../Assets/location.svg"></a>
+                                            <span class="emp-details-content">Lansing, lllinois</span><br>
+                                        </div>
+                                        <div class="view-employee">
+                                            <div></div>
+                                            <div class="view-link">
+                                                <p>
+                                                    <a href="#">View
+                                                    <img src="../Assets/Vector.svg"></a>
+                                                </p>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="emp-6">
+                                    <div class="emp-designation">
+                                        <div>
+                                            <a href="#"><img src="../Assets/user-2.jpg" class="employee-image"></a>
+                                        </div>
+                                        <div class="emp-name">
+                                            <p>Dianne Russell<br><span class="designation">Full Stack Software Engineer</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="emp-details">
+                                        <div class="emp-id">
+                                            <a href="#"><img src="../Assets/Vector (1).svg"></a>
+                                            <span class="emp-details-content">INF922</span><br>
+                                        </div>
+                                        <div class="emp-email">
+                                            <a href="#"><img src="../Assets/email.svg"></a>
+                                            <span class="emp-details-content">kspiteri@yahoo.com</span>
+                                        </div>
+                                        <div class="emp-domain">
+                                            <a href="#"><img src="../Assets/team.svg"></a>
+                                            <span class="emp-details-content">HUman Research</span><br>
+                                        </div>
+                                        <div class="emp-location">
+                                            <a href="#"><img src="../Assets/location.svg"></a>
+                                            <span class="emp-details-content">Carona, Michigan</span><br>
+                                        </div>
+                                        <div class="view-employee">
+                                            <div></div>
+                                            <div class="view-link">
+                                                <p>
+                                                    <a href="#">View
+                                                    <img src="../Assets/Vector.svg"></a>
+                                                </p>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
