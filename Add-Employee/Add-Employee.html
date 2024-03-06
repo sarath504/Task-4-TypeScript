@@ -16,7 +16,7 @@
                         <a href="#"><img src="../Assets/logo-circle.PNG" class="logo-cirlce"></a>
                     </div>
                     <div>
-                        <a href="#"><img src="../Assets/handle.png" onclick="hamburgerClose()" class="reverse-handle"></a>
+                        <a href="#"><img src="../Assets/handle.png" onclick="closeHamburger()" class="reverse-handle"></a>
                     </div>
                 </div>
                 <div class="hamburger-image"><a href="#"><img src="../Assets/Horizontal-nav/Dashboard.svg"></a></div>
@@ -31,7 +31,7 @@
                             <a href="#"><img src="../Assets/TezoLogo.svg"></a>
                         </div>
                         <div class="left-container-arrow">
-                            <a href="#"><img src="../Assets/handle.png" onclick="hamburgerOpen()"></a>
+                            <a href="#"><img src="../Assets/handle.png" onclick="openHamburger()"></a>
                         </div>
                     </div>
                     <div>
@@ -201,13 +201,13 @@
                                                     <i class="fa fa-angle-down down-icon"></i>
                                                 </button>
                                                 <div class="dropdown-content">
-                                                  <span  onclick="dropDown(1,'Hyderabad')">Hyderabad</span>
-                                                  <span  onclick="dropDown(1,'Banglore')">Banglore</span>
-                                                  <span  onclick="dropDown(1,'Chennai')">Chennai</span>
-                                                  <span  onclick="dropDown(1,'Pune')">Pune</span>
-                                                  <span  onclick="dropDown(1,'Kolkata')">Kolkata</span>
-                                                  <span  onclick="dropDown(1,'Delhi')">Delhi</span>
-                                                  <span  onclick="dropDown(1,'Mumbai')">Mumbai</span>
+                                                  <span  onclick="dropDownText(1,'Hyderabad')">Hyderabad</span>
+                                                  <span  onclick="dropDownText(1,'Banglore')">Banglore</span>
+                                                  <span  onclick="dropDownText(1,'Chennai')">Chennai</span>
+                                                  <span  onclick="dropDownText(1,'Pune')">Pune</span>
+                                                  <span  onclick="dropDownText(1,'Kolkata')">Kolkata</span>
+                                                  <span  onclick="dropDownText(1,'Delhi')">Delhi</span>
+                                                  <span  onclick="dropDownText(1,'Mumbai')">Mumbai</span>
                                                 </div>
                                             </div> 
                                         </div>
@@ -220,9 +220,9 @@
                                                     <i class="fa fa-angle-down down-icon"></i>
                                                 </button>
                                                 <div class="dropdown-content">
-                                                  <span onclick="dropDown(2,'UX Designer')">UX Designer</span>
-                                                  <span onclick="dropDown(2,'Full Stack Developer')">Full Stack Developer</span>
-                                                  <span onclick="dropDown(2,'Software Developer')">Software Developer</span>
+                                                  <span onclick="dropDownText(2,'UX Designer')">UX Designer</span>
+                                                  <span onclick="dropDownText(2,'Full Stack Developer')">Full Stack Developer</span>
+                                                  <span onclick="dropDownText(2,'Software Developer')">Software Developer</span>
                                                 </div>
                                             </div> 
                                         </div>
@@ -233,11 +233,11 @@
                                                     <i class="fa fa-angle-down down-icon"></i>
                                                 </button>
                                                 <div class="dropdown-content">
-                                                  <span onclick="dropDown(3,'IT')">IT</span>
-                                                  <span onclick="dropDown(3,'Product Engg.')">Product Engg.</span>
-                                                  <span onclick="dropDown(3,'Software Developer')">Software Developer</span>
-                                                  <span onclick="dropDown(3,'QA')">QA</span>
-                                                  <span onclick="dropDown(3,'Finance')">Finance</span>
+                                                  <span onclick="dropDownText(3,'IT')">IT</span>
+                                                  <span onclick="dropDownText(3,'Product Engg.')">Product Engg.</span>
+                                                  <span onclick="dropDownText(3,'Software Developer')">Software Developer</span>
+                                                  <span onclick="dropDownText(3,'QA')">QA</span>
+                                                  <span onclick="dropDownText(3,'Finance')">Finance</span>
                                                 </div>
                                             </div> 
                                         </div>
@@ -250,9 +250,9 @@
                                                     <i class="fa fa-angle-down down-icon"></i>
                                                 </button>
                                                 <div class="dropdown-content">
-                                                  <span onclick="dropDown(4,'Manager A')">Manager A</span>
-                                                  <span onclick="dropDown(4,'Manager B')">Manager B</span>
-                                                  <span onclick="dropDown(4,'Manager C')">Manager C</span>
+                                                  <span onclick="dropDownText(4,'Manager A')">Manager A</span>
+                                                  <span onclick="dropDownText(4,'Manager B')">Manager B</span>
+                                                  <span onclick="dropDownText(4,'Manager C')">Manager C</span>
                                                 </div>
                                             </div> 
                                         </div>
@@ -263,9 +263,9 @@
                                                     <i class="fa fa-angle-down down-icon"></i>
                                                 </button>
                                                 <div class="dropdown-content">
-                                                  <span href="#" onclick="dropDown(5,'Project 1')">Project 1</span>
-                                                  <span href="#" onclick="dropDown(5,'Project 2')">Project 2</span>
-                                                  <span href="#" onclick="dropDown(5,'Project 3')">Project 3</span>
+                                                  <span href="#" onclick="dropDownText(5,'Project 1')">Project 1</span>
+                                                  <span href="#" onclick="dropDownText(5,'Project 2')">Project 2</span>
+                                                  <span href="#" onclick="dropDownText(5,'Project 3')">Project 3</span>
                                                 </div>
                                             </div> 
                                         </div>

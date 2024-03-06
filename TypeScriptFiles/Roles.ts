@@ -1,4 +1,4 @@
-function hamburgerOpen():void{
+function openHamburger1():void{
     var element=document.getElementsByClassName('left-container');
     var hamburger=document.getElementsByClassName('hamburger-menu');
     var mainContainer=document.getElementsByClassName('main-container');
@@ -8,7 +8,7 @@ function hamburgerOpen():void{
     mainContainer[0].classList.add('expand');
 }
 
-function hamburgerClose():void{
+function closeHamburger1():void{
     var leftUpdate=document.getElementsByClassName('left-container-update');
     var element=document.getElementsByClassName('left-container');
     var hamburger=document.getElementsByClassName('hamburger-menu');

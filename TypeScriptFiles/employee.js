@@ -670,7 +670,7 @@ function cancelDelete() {
     button[0].disabled = true;
     button[0].classList.remove('delete-btn-activate');
 }
-function hamburgerOpen() {
+function hamburgerOpen3() {
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');
     var mainContainer = document.getElementsByClassName('main-container');
@@ -679,7 +679,7 @@ function hamburgerOpen() {
     hamburger[0].style.display = 'block';
     mainContainer[0].classList.add('expand');
 }
-function hamburgerClose() {
+function hamburgerClose3() {
     var leftUpdate = document.getElementsByClassName('left-container-update');
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');

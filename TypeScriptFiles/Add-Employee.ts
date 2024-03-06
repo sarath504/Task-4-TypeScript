@@ -1,4 +1,4 @@
-function hamburgerOpen():void{
+function openHambuger():void{
     var element=document.getElementsByClassName('left-container');
     var hamburger=document.getElementsByClassName('hamburger-menu');
     var mainContainer=document.getElementsByClassName('main-container');
@@ -8,7 +8,7 @@ function hamburgerOpen():void{
     mainContainer[0].classList.add('expand');
 }
 
-function hamburgerClose():void{
+function closeHamburger():void{
     var leftUpdate=document.getElementsByClassName('left-container-update');
     var element=document.getElementsByClassName('left-container');
     var hamburger=document.getElementsByClassName('hamburger-menu');
@@ -301,7 +301,7 @@ function validateJoinDate(){
     }
 }
 
-function dropDown(dropdownId:number,text:string){
+function dropDownText(dropdownId:number,text:string){
     var dropdown=document.getElementById('dropdown'+dropdownId);
     (dropdown as HTMLElement).querySelector(".dropbtn")!.textContent=text;
 }

@@ -1,5 +1,5 @@
 "use strict";
-function hamburgerOpen() {
+function hamburgerOpen2() {
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');
     var mainContainer = document.getElementsByClassName('main-container');
@@ -8,7 +8,7 @@ function hamburgerOpen() {
     hamburger[0].style.display = 'block';
     mainContainer[0].classList.add('expand');
 }
-function hamburgerClose() {
+function hamburgerClose2() {
     var leftUpdate = document.getElementsByClassName('left-container-update');
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');

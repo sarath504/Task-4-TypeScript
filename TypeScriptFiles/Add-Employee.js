@@ -1,5 +1,5 @@
 "use strict";
-function hamburgerOpen() {
+function openHambuger() {
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');
     var mainContainer = document.getElementsByClassName('main-container');
@@ -8,7 +8,7 @@ function hamburgerOpen() {
     hamburger[0].style.display = 'block';
     mainContainer[0].classList.add('expand');
 }
-function hamburgerClose() {
+function closeHamburger() {
     var leftUpdate = document.getElementsByClassName('left-container-update');
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');
@@ -260,7 +260,7 @@ function validateJoinDate() {
         joinDt[0].style.display = 'block';
     }
 }
-function dropDown(dropdownId, text) {
+function dropDownText(dropdownId, text) {
     var dropdown = document.getElementById('dropdown' + dropdownId);
     dropdown.querySelector(".dropbtn").textContent = text;
 }
