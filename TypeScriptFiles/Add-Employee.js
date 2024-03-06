@@ -264,7 +264,7 @@ function dropDown(dropdownId, text) {
     var dropdown = document.getElementById('dropdown' + dropdownId);
     dropdown.querySelector(".dropbtn").textContent = text;
 }
-function removeValidationMessage(str) {
+function validEmployee(str) {
     var div = document.getElementsByClassName('error-msg-div');
     var empNo = document.getElementsByClassName('empno-data');
     var fName = document.getElementsByClassName('first-name-data');

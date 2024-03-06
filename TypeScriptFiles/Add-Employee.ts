@@ -306,7 +306,7 @@ function dropDown(dropdownId:number,text:string){
     (dropdown as HTMLElement).querySelector(".dropbtn")!.textContent=text;
 }
 
-function removeValidationMessage(str:string){
+function validEmployee(str:string){
     var div:HTMLCollectionOf<Element>=document.getElementsByClassName('error-msg-div');
     var empNo:HTMLCollectionOf<Element>=document.getElementsByClassName('empno-data');
     var fName:HTMLCollectionOf<Element>=document.getElementsByClassName('first-name-data');

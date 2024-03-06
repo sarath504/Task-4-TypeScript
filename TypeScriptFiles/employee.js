@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resetDropdown(btn0, btn1, btn2);
     });
     var data = JSON.parse(localStorage.getItem('details'));
-    dropdownValues(data);
-    addData(data);
+    filterValues(data);
+    createTable(data);
 });
-function addData(data) {
+function createTable(data) {
     var i = 0;
     data.forEach((item) => {
         let tableData = document.getElementsByClassName('user-data');
@@ -119,7 +119,7 @@ function addData(data) {
         division2.appendChild(spanEdit);
         spanEdit.addEventListener('click', function () {
             var index = editClass.charAt(editClass.length - 1);
-            dotEdit(this.parentElement.parentElement.parentElement.parentElement.parentElement.rowIndex, index);
+            editDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement.rowIndex, index);
         });
         var division3 = document.createElement('div');
         division3.classList.add('custom-dropdown-menu-item');
@@ -129,7 +129,7 @@ function addData(data) {
         division3.appendChild(spanDelete);
         spanDelete.addEventListener('click', function () {
             var index = editClass.charAt(editClass.length - 1);
-            dotDelete(this.parentElement.parentElement.parentElement.parentElement.parentElement.rowIndex, index);
+            deleteDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement.rowIndex, index);
         });
         dropdownMenu.appendChild(division1);
         dropdownMenu.appendChild(division2);
@@ -150,7 +150,7 @@ function addData(data) {
         });
     });
 }
-function dotEdit(r, index) {
+function editDetails(r, index) {
     var rows = document.getElementsByClassName('table-row');
     var empno = rows[r - 1].getElementsByClassName('empnoCell')[0].innerHTML;
     const params = new URLSearchParams();
@@ -159,7 +159,7 @@ function dotEdit(r, index) {
     var a = document.getElementsByClassName('anchor-edit' + (index))[0];
     a.setAttribute('href', url);
 }
-function dotDelete(r, index) {
+function deleteDetails(r, index) {
     var rows = document.getElementsByClassName('table-row');
     var msg = document.getElementsByClassName('delete-msg')[0];
     var data = JSON.parse(localStorage.getItem('details'));
@@ -171,7 +171,7 @@ function dotDelete(r, index) {
         msg.style.display = 'none';
     }, 3000);
 }
-function dropdownValues(data) {
+function filterValues(data) {
     var div1 = document.getElementsByClassName("dropdown-content-loc");
     var location = [];
     data.forEach((item) => {
@@ -198,7 +198,7 @@ function dropdownValues(data) {
         checkBox.classList.add("checkbox-dropdown2");
         checkBox.classList.add('check');
         checkBox.setAttribute('id', idname);
-        checkBox.addEventListener("change", dropdownCountLocation);
+        checkBox.addEventListener("change", locationFilterCount);
         checkBox.style.marginRight = '10%';
         div.appendChild(divLabel2);
         div.appendChild(checkBox);
@@ -232,7 +232,7 @@ function dropdownValues(data) {
         checkBox.classList.add("checkbox-dropdown3");
         checkBox.classList.add('check');
         checkBox.setAttribute("id", idname);
-        checkBox.addEventListener("change", dropdownCountDepartment);
+        checkBox.addEventListener("change", departmentFilterCount);
         div.appendChild(divLabel3);
         div.appendChild(checkBox);
         div2[0].appendChild(div);
@@ -265,14 +265,14 @@ function dropdownValues(data) {
         checkBox.classList.add("checkbox-dropdown1");
         checkBox.classList.add('check');
         checkBox.setAttribute('id', idname);
-        checkBox.addEventListener("change", dropdownCountStatus);
+        checkBox.addEventListener("change", statusFilterCount);
         div.appendChild(divLabel1);
         div.appendChild(checkBox);
         div3[0].appendChild(div);
         i++;
     });
 }
-function dropdownStatus() {
+function statusFilter() {
     var dropDown = document.getElementsByClassName('dropdown-content-status');
     var btn = document.getElementsByClassName('dropbtn');
     dropDown[0].style.borderRadius = '7px';
@@ -284,7 +284,7 @@ function dropdownStatus() {
         }
     });
 }
-function dropdownLocation() {
+function locationFilter() {
     var dropDown = document.getElementsByClassName('dropdown-content-loc');
     var btn = document.getElementsByClassName('dropbtn');
     dropDown[0].style.borderRadius = '7px';
@@ -296,7 +296,7 @@ function dropdownLocation() {
         }
     });
 }
-function dropdownDepartment() {
+function departmentFilter() {
     var dropDown = document.getElementsByClassName('dropdown-content-dept');
     var btn = document.getElementsByClassName('dropbtn');
     dropDown[0].style.borderRadius = '7px';
@@ -308,7 +308,7 @@ function dropdownDepartment() {
         }
     });
 }
-function dropdownCountStatus() {
+function statusFilterCount() {
     var count = document.getElementsByClassName('dropdown-count-status');
     var checked = document.getElementsByClassName('checkbox-dropdown1');
     var c1 = 0;
@@ -323,9 +323,9 @@ function dropdownCountStatus() {
     else {
         count[0].innerHTML = '';
     }
-    applyColorChange();
+    filterApplyButtonEnable();
 }
-function dropdownCountLocation() {
+function locationFilterCount() {
     var count = document.getElementsByClassName('dropdown-count-location');
     var checked = document.getElementsByClassName('checkbox-dropdown2');
     var c1 = 0;
@@ -340,9 +340,9 @@ function dropdownCountLocation() {
     else {
         count[0].innerHTML = '';
     }
-    applyColorChange();
+    filterApplyButtonEnable();
 }
-function dropdownCountDepartment() {
+function departmentFilterCount() {
     var count = document.getElementsByClassName('dropdown-count-department');
     var checked = document.getElementsByClassName('checkbox-dropdown3');
     var c1 = 0;
@@ -357,9 +357,9 @@ function dropdownCountDepartment() {
     else {
         count[0].innerHTML = '';
     }
-    applyColorChange();
+    filterApplyButtonEnable();
 }
-function applyColorChange() {
+function filterApplyButtonEnable() {
     var reset = document.getElementsByClassName('reset');
     var apply = document.getElementsByClassName('apply');
     var checked1 = document.getElementsByClassName('checkbox-dropdown1');
@@ -394,7 +394,7 @@ function applyColorChange() {
         reset[0].classList.remove('reset-enable');
     });
 }
-function filterButton(str) {
+function filterByAlphabets(str) {
     var rows = document.getElementsByClassName('table-row');
     var btn = document.getElementsByClassName('btn-alpha');
     var result = str.charCodeAt(0);
@@ -407,7 +407,7 @@ function filterButton(str) {
             rows[0].remove();
         }
         document.getElementsByClassName('vector-image')[0].src = "../Assets/Interface/black-filter.svg";
-        addData(data);
+        createTable(data);
     }
     else {
         var filteredData = data.filter((user) => user.USER.toLowerCase().startsWith(str.toLowerCase()));
@@ -416,7 +416,7 @@ function filterButton(str) {
             rows[0].remove();
         }
         btn[result - 65].style.backgroundColor = 'rgb(244, 72, 72)';
-        addData(filteredData);
+        createTable(filteredData);
         document.getElementsByClassName('vector-image')[0].src = "../Assets/Interface/filter.svg";
         for (var i = 0; i < btn.length; i++) {
             if (btn[i].innerText != str) {
@@ -432,7 +432,7 @@ function filterButton(str) {
         }
     }
 }
-function applyBtn() {
+function filterApply() {
     var statusArray = [];
     var statusLabel = document.getElementsByClassName('status-span');
     var locationArray = [];
@@ -556,8 +556,6 @@ function checkAll() {
 function resetDropdown(btn0, btn1, btn2) {
     var rows = document.getElementsByClassName('table-row');
     var btn = document.getElementsByClassName('dropbtn');
-    var reset = document.getElementsByClassName('reset');
-    var apply = document.getElementsByClassName('apply');
     var check = document.getElementsByClassName('check');
     for (var i = 0; i < check.length; i++) {
         check[i].checked = false;
@@ -657,7 +655,7 @@ function deleteConfirm() {
         msg[0].style.display = 'none';
     }, 3000);
 }
-function cancelConfirm() {
+function cancelDelete() {
     var button = document.getElementsByClassName('delete-btn');
     var div = document.getElementsByClassName('delete-confirm');
     var bodyCheckbox = document.getElementsByClassName('body-checkbox');

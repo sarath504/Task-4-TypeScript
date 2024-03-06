@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         resetDropdown(btn0,btn1,btn2);
     });
     var data:Data[]=JSON.parse(localStorage.getItem('details')!);
-    dropdownValues(data);
-    addData(data);});
+    filterValues(data);
+    createTable(data);});
 
-function addData(data:Data[]):void{
+function createTable(data:Data[]):void{
     var i:number=0;
     data.forEach((item) => {
     let tableData:HTMLCollectionOf<Element>=document.getElementsByClassName('user-data');
@@ -144,7 +144,7 @@ function addData(data:Data[]):void{
     division2.appendChild(spanEdit);
     spanEdit.addEventListener('click',function(){
         var index:string=editClass.charAt(editClass.length-1);
-        dotEdit((this.parentElement!.parentElement!.parentElement!.parentElement!.parentElement as HTMLTableRowElement).rowIndex,index);
+        editDetails((this.parentElement!.parentElement!.parentElement!.parentElement!.parentElement as HTMLTableRowElement).rowIndex,index);
         
     });
 
@@ -156,7 +156,7 @@ function addData(data:Data[]):void{
     division3.appendChild(spanDelete);
     spanDelete.addEventListener('click',function(){
         var index:string=editClass.charAt(editClass.length-1);
-        dotDelete((this.parentElement!.parentElement!.parentElement!.parentElement!.parentElement! as HTMLTableRowElement).rowIndex,index);
+        deleteDetails((this.parentElement!.parentElement!.parentElement!.parentElement!.parentElement! as HTMLTableRowElement).rowIndex,index);
     });
     dropdownMenu.appendChild(division1);
     dropdownMenu.appendChild(division2);
@@ -179,7 +179,7 @@ function addData(data:Data[]):void{
     });
 }
 
-function dotEdit(r:any,index:string):void{
+function editDetails(r:any,index:string):void{
     var rows:HTMLCollectionOf<Element>=document.getElementsByClassName('table-row');
     var empno:string=rows[r-1].getElementsByClassName('empnoCell')[0].innerHTML;
     const params=new URLSearchParams();
@@ -189,7 +189,7 @@ function dotEdit(r:any,index:string):void{
     a.setAttribute('href',url);
 }
 
-function dotDelete(r:any,index:string):void{
+function deleteDetails(r:any,index:string):void{
     var rows:HTMLCollectionOf<Element>=document.getElementsByClassName('table-row');
     var msg=document.getElementsByClassName('delete-msg')[0];
     var data:Data[]=JSON.parse(localStorage.getItem('details')!);
@@ -202,7 +202,7 @@ function dotDelete(r:any,index:string):void{
     },3000);
 }
 
-function dropdownValues(data:Data[]):void{
+function filterValues(data:Data[]):void{
     var div1=document.getElementsByClassName("dropdown-content-loc");
     var location:string[]=[];
     data.forEach((item)=>{
@@ -229,7 +229,7 @@ function dropdownValues(data:Data[]):void{
         checkBox.classList.add("checkbox-dropdown2")
         checkBox.classList.add('check');
         checkBox.setAttribute('id',idname);
-        checkBox.addEventListener("change",dropdownCountLocation);
+        checkBox.addEventListener("change",locationFilterCount);
         checkBox.style.marginRight='10%';
         div.appendChild(divLabel2);
         div.appendChild(checkBox);
@@ -264,7 +264,7 @@ function dropdownValues(data:Data[]):void{
         checkBox.classList.add("checkbox-dropdown3")
         checkBox.classList.add('check');
         checkBox.setAttribute("id",idname);
-        checkBox.addEventListener("change",dropdownCountDepartment);
+        checkBox.addEventListener("change",departmentFilterCount);
         div.appendChild(divLabel3);
         div.appendChild(checkBox);
         div2[0].appendChild(div);
@@ -298,7 +298,7 @@ function dropdownValues(data:Data[]):void{
         checkBox.classList.add("checkbox-dropdown1")
         checkBox.classList.add('check');
         checkBox.setAttribute('id',idname);
-        checkBox.addEventListener("change",dropdownCountStatus);
+        checkBox.addEventListener("change",statusFilterCount);
         div.appendChild(divLabel1);
         div.appendChild(checkBox);
         div3[0].appendChild(div);
@@ -306,7 +306,7 @@ function dropdownValues(data:Data[]):void{
     });
 }
 
-function dropdownStatus():void{
+function statusFilter():void{
     var dropDown:HTMLCollectionOf<Element>=document.getElementsByClassName('dropdown-content-status');
     var btn=document.getElementsByClassName('dropbtn');
     (dropDown[0] as HTMLElement).style.borderRadius='7px';
@@ -319,7 +319,7 @@ function dropdownStatus():void{
     });
 }
 
-function dropdownLocation():void{
+function locationFilter():void{
     var dropDown:HTMLCollectionOf<Element>=document.getElementsByClassName('dropdown-content-loc');
     var btn=document.getElementsByClassName('dropbtn');
     (dropDown[0] as HTMLElement).style.borderRadius='7px';
@@ -332,7 +332,7 @@ function dropdownLocation():void{
     });
 }
 
-function dropdownDepartment():void{
+function departmentFilter():void{
     var dropDown=document.getElementsByClassName('dropdown-content-dept');
     var btn=document.getElementsByClassName('dropbtn');
     (dropDown[0] as HTMLElement).style.borderRadius='7px';
@@ -345,7 +345,7 @@ function dropdownDepartment():void{
     });
 }
 
-function dropdownCountStatus():void{
+function statusFilterCount():void{
     var count:HTMLCollectionOf<Element>=document.getElementsByClassName('dropdown-count-status');
     var checked:HTMLCollectionOf<Element>=document.getElementsByClassName('checkbox-dropdown1');
     var c1=0;
@@ -360,10 +360,10 @@ function dropdownCountStatus():void{
     else{
         count[0].innerHTML='';
     }
-    applyColorChange();
+    filterApplyButtonEnable();
 }
 
-function dropdownCountLocation(){
+function locationFilterCount(){
     var count:HTMLCollectionOf<Element>=document.getElementsByClassName('dropdown-count-location');
     var checked:HTMLCollectionOf<Element>=document.getElementsByClassName('checkbox-dropdown2');
     var c1=0;
@@ -378,10 +378,10 @@ function dropdownCountLocation(){
     else{
         count[0].innerHTML='';
     }
-    applyColorChange();
+    filterApplyButtonEnable();
 }
 
-function dropdownCountDepartment(){
+function departmentFilterCount(){
     var count:HTMLCollectionOf<Element>=document.getElementsByClassName('dropdown-count-department');
     var checked:HTMLCollectionOf<Element>=document.getElementsByClassName('checkbox-dropdown3');
     var c1=0;
@@ -396,10 +396,10 @@ function dropdownCountDepartment(){
     else{
         count[0].innerHTML='';
     }
-    applyColorChange();
+    filterApplyButtonEnable();
 }
 
-function applyColorChange():void{
+function filterApplyButtonEnable():void{
     var reset:HTMLCollectionOf<Element>=document.getElementsByClassName('reset');
     var apply:HTMLCollectionOf<Element>=document.getElementsByClassName('apply');
     var checked1:HTMLCollectionOf<Element>=document.getElementsByClassName('checkbox-dropdown1');
@@ -436,7 +436,7 @@ function applyColorChange():void{
     })
 }
 
-function filterButton(str:string):void{
+function filterByAlphabets(str:string):void{
     var rows=document.getElementsByClassName('table-row') as HTMLCollectionOf<Element>;
     var btn=document.getElementsByClassName('btn-alpha') as HTMLCollectionOf<Element>;
     var result:number=str.charCodeAt(0);
@@ -449,7 +449,7 @@ function filterButton(str:string):void{
             rows[0].remove();
         } 
         (document.getElementsByClassName('vector-image')[0] as HTMLImageElement).src="../Assets/Interface/black-filter.svg";
-        addData(data);
+        createTable(data);
     }
 
     else{
@@ -459,7 +459,7 @@ function filterButton(str:string):void{
             rows[0].remove();
         }
         (btn[result-65] as HTMLButtonElement).style.backgroundColor='rgb(244, 72, 72)';
-        addData(filteredData);
+        createTable(filteredData);
         (document.getElementsByClassName('vector-image')[0] as HTMLImageElement).src="../Assets/Interface/filter.svg";
         for(var i:number=0;i<btn.length;i++){
             if((btn[i] as HTMLButtonElement).innerText!=str){
@@ -476,7 +476,7 @@ function filterButton(str:string):void{
     }
 }
 
-function applyBtn():void{
+function filterApply():void{
     var statusArray:string[]=[];
     var statusLabel=document.getElementsByClassName('status-span');
     var locationArray:string[]=[];
@@ -604,8 +604,6 @@ function checkAll():void{
 function resetDropdown(btn0:string,btn1:string,btn2:string):void {
     var rows=document.getElementsByClassName('table-row');
     var btn=document.getElementsByClassName('dropbtn');
-    var reset=document.getElementsByClassName('reset');
-    var apply=document.getElementsByClassName('apply');
     var check=document.getElementsByClassName('check');
     for(var i=0;i<check.length;i++){
         (check[i] as HTMLInputElement).checked=false;
@@ -713,7 +711,7 @@ function deleteConfirm():void{
     
 }
 
-function cancelConfirm():void{
+function cancelDelete():void{
     var button=document.getElementsByClassName('delete-btn');
     var div=document.getElementsByClassName('delete-confirm');
     var bodyCheckbox=document.getElementsByClassName('body-checkbox');

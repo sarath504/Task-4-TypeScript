@@ -121,7 +121,7 @@
                             <div class="empno">
                                 <form class="empno-form">
                                     <label for="empno" class="label">Emp No</label><br>
-                                    <input type="text" class="empno-data" id='empno' placeholder="Text" required onfocus="removeValidationMessage('empno')" onblur="InputBoxFocusOut('empno')" onkeyup="validateEmpId()">
+                                    <input type="text" class="empno-data" id='empno' placeholder="Text" required onfocus="validEmployee('empno')" onblur="InputBoxFocusOut('empno')" onkeyup="validateEmpId()">
                                     <div class="error-msg-div">
                                         <img src="../Assets/required.png" class="required required1">
                                         <span class="error-msg div1">This field is required</span>
@@ -135,7 +135,7 @@
                                 <div class="name-data">
                                     <div class="name-div">
                                         <label for="first-name" class="label">First Name</label><br>
-                                        <input type="text" class="first-name-data" id="first-name" placeholder="Text" required onfocus="removeValidationMessage('fname')" onblur="InputBoxFocusOut('fname')" onkeyup="validateFirstName()">
+                                        <input type="text" class="first-name-data" id="first-name" placeholder="Text" required onfocus="validEmployee('fname')" onblur="InputBoxFocusOut('fname')" onkeyup="validateFirstName()">
                                         <div class="error-msg-div">
                                             <img src="../Assets/required.png" class="required">
                                             <span class="error-msg">This field is required</span>
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="name-div">
                                         <label for="last-name" class="label">Last Name</label><br>
-                                        <input type="text" class="last-name-data" id="last-name" placeholder="Text" required onfocus="removeValidationMessage('lname')" onblur="InputBoxFocusOut('lname')" onkeyup="validateLastName()">
+                                        <input type="text" class="last-name-data" id="last-name" placeholder="Text" required onfocus="validEmployee('lname')" onblur="InputBoxFocusOut('lname')" onkeyup="validateLastName()">
                                         <div class="error-msg-div">
                                             <img src="../Assets/required.png" class="required">
                                             <span class="error-msg">This field is required</span>
@@ -163,7 +163,7 @@
                                 <div class="contact-details">
                                     <div class="contact-details-div">
                                         <label for="email" class="label">Email id</label><br>
-                                        <input type="email" class="email-data" id="email" placeholder="joe.j@technovert.com" required onfocus="removeValidationMessage('email')" onblur="InputBoxFocusOut('email')" onkeyup="validateEmail()">
+                                        <input type="email" class="email-data" id="email" placeholder="joe.j@technovert.com" required onfocus="validEmployee('email')" onblur="InputBoxFocusOut('email')" onkeyup="validateEmail()">
                                         <div class="error-msg-div">
                                             <img src="../Assets/required.png" class="required">
                                             <span class="error-msg">This field is required</span>
@@ -185,7 +185,7 @@
                                     <div class="emp-inf1">
                                         <div class="joindt-div">
                                             <label for="join-dt" class="label">Joining Date</label><br>
-                                            <input type="text" class="joindt-data" id="join-dt"  required onkeyup="validateJoinDate()" onfocus="{this.type='date'};removeValidationMessage('joindt')" onblur="InputBoxFocusOut('joindt')">
+                                            <input type="text" class="joindt-data" id="join-dt"  required onkeyup="validateJoinDate()" onfocus="{this.type='date'};validEmployee('joindt')" onblur="InputBoxFocusOut('joindt')">
                                             <div class="error-msg-div">
                                                 <img src="../Assets/required.png" class="required">
                                                 <span class="error-msg">This field is required</span>

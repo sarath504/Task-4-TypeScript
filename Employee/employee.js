@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         });
         var a=localStorage.getItem('details');
         var data=JSON.parse(a);
-        addData(data);
+        createTable(data);
 });
 
-function addData(data){
+function createTable(data){
     var i=0;
     data.forEach((item) => {
     let tableData=document.getElementsByClassName('user-data');
@@ -457,7 +457,7 @@ function filterButton(str){
         for(var i=0;i<l;i++){
             rows[0].remove();
         }
-        addData(data);
+        createTable(data);
         btn[result-65].style.backgroundColor='#F0F0F0';
         btn[result-65].style.color='#818FA0';
         document.getElementsByClassName('vector-image')[0].src="../Assets/Interface/black-filter.svg";
@@ -470,7 +470,7 @@ function filterButton(str){
         for(var i=0;i<l;i++){
             rows[0].remove();
         }
-        addData(filteredData);
+        createTable(filteredData);
         btn[result-65].style.backgroundColor='rgb(244, 72, 72)';
         btn[result-65].style.color='white';
         document.getElementsByClassName('vector-image')[0].src="../Assets/Interface/filter.svg";
