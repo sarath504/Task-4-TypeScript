@@ -1,4 +1,4 @@
-function openHambuger():void{
+function openHamburger():void{
     var element=document.getElementsByClassName('left-container');
     var hamburger=document.getElementsByClassName('hamburger-menu');
     var mainContainer=document.getElementsByClassName('main-container');

@@ -1,5 +1,5 @@
 "use strict";
-function openHambuger() {
+function openHamburger() {
     var element = document.getElementsByClassName('left-container');
     var hamburger = document.getElementsByClassName('hamburger-menu');
     var mainContainer = document.getElementsByClassName('main-container');
