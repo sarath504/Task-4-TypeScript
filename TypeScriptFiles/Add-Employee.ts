@@ -19,7 +19,7 @@ function closeHamburger():void{
     mainContainer[0].classList.add('hamburger-close');
 }
 
-interface Data{
+interface employeeDetails{
     image:string
     USER:string;
     EMAIL:string;
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     var parameters=window.location.search;
     var urlparams=new URLSearchParams(parameters);
     var empno=urlparams.get('empid');
-    var data:Data[]=JSON.parse(localStorage.getItem('details')!);
+    var data:employeeDetails[]=JSON.parse(localStorage.getItem('details')!);
     if(empno){
         document.getElementsByClassName('add-employee-btn')[0].innerHTML='Update';
     }
@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded',()=>{
             (document.getElementsByClassName('mobile-data')[0] as HTMLInputElement).value=element['MOBILE'];
             (document.getElementsByClassName('dob-data')[0] as HTMLInputElement).value=element['DOB'];
             (document.getElementsByClassName('joindt-data')[0] as HTMLInputElement).value=element['JOINDT'];
-            (document.getElementsByClassName('btn-loc')[0] as HTMLInputElement).innerText=element['LOCATION'];
-            (document.getElementsByClassName('btn-role')[0] as HTMLInputElement).innerText=element['ROLE'];
-            (document.getElementsByClassName('btn-dept')[0] as HTMLInputElement).innerText=element['DEPARTMENT'];
-            (document.getElementsByClassName('btn-manager')[0] as HTMLInputElement).innerText=element['MANAGER'];
-            (document.getElementsByClassName('btn-project')[0] as HTMLInputElement).innerText=element['PROJECT'];
+            (document.getElementsByClassName('btn-loc')[0] as HTMLElement).innerText=element['LOCATION'];
+            (document.getElementsByClassName('btn-role')[0] as HTMLElement).innerText=element['ROLE'];
+            (document.getElementsByClassName('btn-dept')[0] as HTMLElement).innerText=element['DEPARTMENT'];
+            (document.getElementsByClassName('btn-manager')[0] as HTMLElement).innerText=element['MANAGER'];
+            (document.getElementsByClassName('btn-project')[0] as HTMLElement).innerText=element['PROJECT'];
         }
     });
 
@@ -110,7 +110,7 @@ function employeeValidation():void{
     }
 }
 
-function loadData():Data{
+function loadData():employeeDetails{
     var btn=document.getElementsByClassName('dropbtn');
     var img=document.getElementsByClassName('profile-picture')[0] as HTMLImageElement;
     var empNo=(document.getElementsByClassName('empno-data')[0] as HTMLInputElement).value;
@@ -149,8 +149,8 @@ function loadData():Data{
     return data;
 }
 
-function saveData(data:Data){
-    const storedData:Data[]=JSON.parse(localStorage.getItem('details') as string) || [];
+function saveData(data:employeeDetails){
+    const storedData:employeeDetails[]=JSON.parse(localStorage.getItem('details') as string) || [];
     var isExist:boolean=false;
     storedData!.forEach((element)=>{
         if(element['EMPNO']==data['EMPNO']){
@@ -177,7 +177,7 @@ function saveData(data:Data){
 
 function AddEmployee():void{
     employeeValidation();
-    var data:Data=loadData();
+    var data:employeeDetails=loadData();
     var div:HTMLCollectionOf<Element>=document.getElementsByClassName('error-msg-div');
     var mainDiv:HTMLCollectionOf<Element>=document.getElementsByClassName('profile-picture-div');
     var edit:HTMLCollectionOf<Element>=document.getElementsByClassName("edit-text");

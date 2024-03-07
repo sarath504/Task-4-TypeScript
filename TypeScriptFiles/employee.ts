@@ -1,4 +1,4 @@
-interface Data{
+interface employeeDetails{
     image:string
     USER:string;
     EMAIL:string;
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     (reset[0] as HTMLElement).addEventListener('click',function(){
         resetDropdown(btn0,btn1,btn2);
     });
-    var data:Data[]=JSON.parse(localStorage.getItem('details')!);
+    var data:employeeDetails[]=JSON.parse(localStorage.getItem('details')!);
     filterValues(data);
     createTable(data);});
 
-function createTable(data:Data[]):void{
+function createTable(data:employeeDetails[]):void{
     var i:number=0;
     data.forEach((item) => {
     let tableData:HTMLCollectionOf<Element>=document.getElementsByClassName('user-data');
@@ -192,7 +192,7 @@ function editDetails(r:any,index:string):void{
 function deleteDetails(r:any,index:string):void{
     var rows:HTMLCollectionOf<Element>=document.getElementsByClassName('table-row');
     var msg=document.getElementsByClassName('delete-msg')[0];
-    var data:Data[]=JSON.parse(localStorage.getItem('details')!);
+    var data:employeeDetails[]=JSON.parse(localStorage.getItem('details')!);
     data.splice(parseInt(index)-1,1);
     localStorage.setItem('details',JSON.stringify(data));
     rows[r-1].remove();
@@ -202,7 +202,7 @@ function deleteDetails(r:any,index:string):void{
     },3000);
 }
 
-function filterValues(data:Data[]):void{
+function filterValues(data:employeeDetails[]):void{
     var div1=document.getElementsByClassName("dropdown-content-loc");
     var location:string[]=[];
     data.forEach((item)=>{
@@ -440,7 +440,7 @@ function filterByAlphabets(str:string):void{
     var rows=document.getElementsByClassName('table-row') as HTMLCollectionOf<Element>;
     var btn=document.getElementsByClassName('btn-alpha') as HTMLCollectionOf<Element>;
     var result:number=str.charCodeAt(0);
-    var data:Data[]=JSON.parse(localStorage.getItem('details')!);
+    var data:employeeDetails[]=JSON.parse(localStorage.getItem('details')!);
     if((btn[result-65] as HTMLButtonElement).style.backgroundColor==='rgb(244, 72, 72)'){
         (btn[result-65] as HTMLButtonElement).style.removeProperty('background-color');
         btn[result-65].classList.toggle('alpha-btn');
@@ -453,7 +453,7 @@ function filterByAlphabets(str:string):void{
     }
 
     else{
-        var filteredData:Data[]=data.filter((user:{USER:string})=>user.USER.toLowerCase().startsWith(str.toLowerCase()));
+        var filteredData:employeeDetails[]=data.filter((user:{USER:string})=>user.USER.toLowerCase().startsWith(str.toLowerCase()));
         var l:number=rows.length;
         for(var i:number=0;i<l;i++){
             rows[0].remove();
@@ -676,7 +676,7 @@ function deleteRow():void{
 }
 
 function deleteConfirm():void{
-    var data:Data[]=JSON.parse(localStorage.getItem('details')!);
+    var data:employeeDetails[]=JSON.parse(localStorage.getItem('details')!);
     var button=document.getElementsByClassName('delete-btn');
     var bodyCheckbox=document.getElementsByClassName('body-checkbox');
     var row=document.getElementsByClassName('table-row');
